@@ -55,3 +55,9 @@
 - General look and feel of the whole site
 - Is it visually appealing
 - Is it cohesive 
+
+
+## Links to design info
+- https://dbdiagram.io/d/618fd33a02cf5d186b545019
+- https://docs.google.com/presentation/d/1vwb60j4xTb5wODYwRE8JrScYyHtRHq8QUnvXgMma8Xo/edit#slide=id.p
+- https://github.com/DerekMalone/dsm-personal-bio
