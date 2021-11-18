@@ -7,6 +7,10 @@ import {
 // import PropTypes from 'prop-types';
 
 export default function Routes() {
+  // const isAdmin = firebaseConfig.adminUID;
+
+  // need to figure out how to implement the isAdmin aspect
+
   return (
     <Switch>
       <Route exact path="/" component={AboutMe} />
