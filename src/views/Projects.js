@@ -3,9 +3,9 @@ import ProjectDetails from '../components/ProjectDetails';
 import { getRepoList } from '../helpers/projectsData';
 
 export default function Projects() {
-  const [repos, setRepos] = useState({});
+  const [repos, setRepos] = useState([]);
   useEffect(() => {
-    getRepoList().then(setRepos);
+    getRepoList().then((repoArray) => repoArray.map(setRepos));
   }, []);
 
   console.warn(repos);
