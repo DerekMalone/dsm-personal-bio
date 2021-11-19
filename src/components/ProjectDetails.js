@@ -1,18 +1,17 @@
 import React from 'react';
-// import { useState } from 'react/cjs/react.development';
-// import { getRepoList } from '../helpers/projectsData';
-// , { getProject, useEffect }
-// import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react/cjs/react.development';
+import PropTypes from 'prop-types';
+import { getProject } from '../helpers/projectsData';
 
-export default function ProjectDetails() {
-  // const [projects, setProjects] = useState({});
-  // useEffect(() => {
-  //   // getProject().then(setRepos);
-  // }, []);
-
-  // (repoArray) => getProject(repoArray).then(setRepos)
-
-  // console.warn(repos);
+export default function ProjectDetails({ repos }) {
+  const [projects, setProjects] = useState({});
+  useEffect(() => {
+    // const  = (...repos);
+    repos.map(() => getProject().then(setProjects));
+    // setProjects(mappedRepos);
+    // ;
+  }, []);
+  console.warn('debug', projects);
 
   return (
     <div>
@@ -22,6 +21,8 @@ export default function ProjectDetails() {
   );
 }
 
-// ProjectDetails.propTypes = {
+ProjectDetails.propTypes = {
+  repos: PropTypes.arrayOf(PropTypes.object),
+};
 
-// };
+ProjectDetails.defaultProps = { repos: [] };

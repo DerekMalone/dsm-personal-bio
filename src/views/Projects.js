@@ -5,10 +5,8 @@ import { getRepoList } from '../helpers/projectsData';
 export default function Projects() {
   const [repos, setRepos] = useState([]);
   useEffect(() => {
-    getRepoList().then((repoArray) => repoArray.map(setRepos));
+    getRepoList().then(setRepos);
   }, []);
-
-  console.warn(repos);
 
   return (
     <div>
