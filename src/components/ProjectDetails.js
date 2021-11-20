@@ -1,18 +1,13 @@
 import React from 'react';
-// import { useState } from 'react/cjs/react.development';
-// import { getRepoList } from '../helpers/projectsData';
-// , { getProject, useEffect }
-// import PropTypes from 'prop-types'
+// import { useEffect } from 'react/cjs/react.development';
+// import { getRepoList, getProject } from '../helpers/projectsData';
 
 export default function ProjectDetails() {
+  // const [repos, setRepos] = useState([]);
   // const [projects, setProjects] = useState({});
+
   // useEffect(() => {
-  //   // getProject().then(setRepos);
   // }, []);
-
-  // (repoArray) => getProject(repoArray).then(setRepos)
-
-  // console.warn(repos);
 
   return (
     <div>
@@ -21,7 +16,3 @@ export default function ProjectDetails() {
     </div>
   );
 }
-
-// ProjectDetails.propTypes = {
-
-// };
