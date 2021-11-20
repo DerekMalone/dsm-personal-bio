@@ -7,18 +7,19 @@ export default function Projects() {
   const [projects, setProjects] = useState({});
 
   useEffect(() => {
-    getRepoList().then(setRepos);
-    setProjects(repos);
-    repos.forEach((repo) => {
-      getProject(repo.repo_name).then(setProjects); // ((prevState) => [...prevState, newRepo])
-    });
+    getRepoList().then(setRepos); // need to resolve how this is pulling repos and calling projects...
+    getProject('you-do-app').then(setProjects);
+    // repos.forEach((repo) => {
+    //   getProject(repo).then(setProjects); // ((prevState) => [...prevState, newRepo])
+    // });
     // repos.map(() => getProject().then(setProjects));
     // setProjects(mappedRepos);
     // ;
   }, []);
-  // console.warn('repo name', repos.repo_name);
-  console.warn('repos', repos);
+
   console.warn('projects', projects);
+  console.warn('repo name', repos.repoName);
+  console.warn('repos', repos);
 
   return (
     <div>

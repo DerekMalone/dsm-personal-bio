@@ -25,7 +25,7 @@ const getRepoList = async () => {
 
 const getProject = async (repoArray) => {
   const repo = await axios.get(
-    `${gitHubUrl}/repos/DerekMalone/${repoArray[0].repo_name}.json`,
+    `${gitHubUrl}/repos/DerekMalone/${repoArray.repo_name}.json`,
   );
   const repoData = repo.data;
   return repoData;
