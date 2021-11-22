@@ -24,7 +24,7 @@ export default function Projects() {
   }, []);
 
   // console.warn('repo name', repos[0].repoName);
-  console.warn('repos', repos);
+  // console.warn('repos', repos);
 
   return (
     <div>

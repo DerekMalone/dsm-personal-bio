@@ -22,6 +22,7 @@ export default function ProjectDetails({ repos }) {
     // setProjects(projectArray);
   }, []);
 
+  console.warn('list of repos', repos);
   console.warn('project', projects.name);
 
   return (
