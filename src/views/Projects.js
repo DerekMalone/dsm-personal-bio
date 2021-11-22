@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import ProjectDetails from '../components/ProjectDetails';
-import { getProject, getRepoList } from '../helpers/projectsData';
+import { getRepoList } from '../helpers/projectsData';
 
 export default function Projects() {
   const [repos, setRepos] = useState([]);
-  const [projects, setProjects] = useState({});
 
   useEffect(() => {
-    getRepoList().then(setRepos); // need to resolve how this is pulling repos and calling projects...
-    getProject('you-do-app').then(setProjects);
+    let isMounted = true;
+    getRepoList().then((repoArray) => {
+      if (isMounted) setRepos(repoArray);
+    });
+    return () => {
+      isMounted = false;
+    };
+    // need to resolve how this is pulling repos and calling projects...
+    // getProject('you-do-app').then(setProjects);
     // repos.forEach((repo) => {
     //   getProject(repo).then(setProjects); // ((prevState) => [...prevState, newRepo])
     // });
@@ -17,13 +23,21 @@ export default function Projects() {
     // ;
   }, []);
 
-  console.warn('projects', projects);
-  console.warn('repo name', repos.repoName);
+  // console.warn('repo name', repos[0].repoName);
   console.warn('repos', repos);
 
   return (
     <div>
       <ProjectDetails repos={repos} />
+      {/* { repos ? (
+        <>
+          {repos.map((repo) => (
+            <ProjectDetails repos={repo} />
+          ))}
+        </>
+      ) : (
+        'No Projects'
+      )}; */}
     </div>
   );
 }
