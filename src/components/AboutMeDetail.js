@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// , { useEffect }
-// let aboutMeDetails = {};
 
 export default function AboutMeDetail({ aboutMe }) {
   return (
