@@ -6,7 +6,7 @@ const dbUrl = firebaseConfig.databaseURL;
 const getAboutMe = () => new Promise((resolve, reject) => {
   axios
     .get(`${dbUrl}/about-me.json`)
-    .then((response) => resolve(response.data))
+    .then((response) => resolve(Object.values(response.data)[0]))
     .catch(reject);
 });
 
