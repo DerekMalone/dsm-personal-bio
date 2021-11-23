@@ -18,16 +18,14 @@ const getRepoList = async () => {
 };
 
 // const getProject = (repo) => new Promise((resolve, reject) => {
-//   axios.get(`${gitHubUrl}/repos/DerekMalone/${repo}.json`)
+//   axios.get(`${gitHubUrl}/repos/DerekMalone/${repo}`)
 //     .then((response) => resolve(Object.values(response.data)))
 //     .catch(reject);
 // });
 
 const getProject = async (repoArray) => {
-  const repo = await axios.get(
-    `${gitHubUrl}/repos/DerekMalone/${repoArray[0].repo_name}.json`,
-  );
-  const repoData = repo.data;
+  const repo = await axios.get(`${gitHubUrl}/repos/DerekMalone/${repoArray}`);
+  const repoData = Object.values(repo.data);
   return repoData;
 };
 

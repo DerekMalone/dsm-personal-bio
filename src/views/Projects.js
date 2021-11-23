@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import ProjectDetails from '../components/ProjectDetails';
-import { getProject, getRepoList } from '../helpers/projectsData';
+import { getRepoList } from '../helpers/projectsData';
 
 export default function Projects() {
   const [repos, setRepos] = useState([]);
-  const [projects, setProjects] = useState({});
 
   useEffect(() => {
-    getRepoList().then(setRepos);
-    setProjects(repos);
-    repos.forEach((repo) => {
-      getProject(repo.repo_name).then(setProjects); // ((prevState) => [...prevState, newRepo])
+    let isMounted = true;
+    getRepoList().then((repoArray) => {
+      if (isMounted) setRepos(repoArray);
     });
-    // repos.map(() => getProject().then(setProjects));
-    // setProjects(mappedRepos);
-    // ;
+    return () => {
+      isMounted = false;
+    };
   }, []);
-  // console.warn('repo name', repos.repo_name);
-  console.warn('repos', repos);
-  console.warn('projects', projects);
 
   return (
     <div>
-      <ProjectDetails repos={repos} />
+      {/* <ProjectDetails key={repos.repoName} repos={repos} /> */}
+      {repos ? (
+        <>
+          {repos.map((repo) => (
+            <ProjectDetails key={repo.repoName} repo={repo} />
+          ))}
+        </>
+      ) : (
+        'No Projects'
+      )}
+      ;
     </div>
   );
 }
