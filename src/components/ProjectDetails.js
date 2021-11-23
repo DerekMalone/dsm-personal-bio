@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
 import { getProject } from '../helpers/projectsData';
 

@@ -15,9 +15,10 @@ export default function Projects() {
     };
   }, []);
 
+  console.warn(repos);
+
   return (
     <div>
-      {/* <ProjectDetails key={repos.repoName} repos={repos} /> */}
       {repos ? (
         <>
           {repos.map((repo) => (
