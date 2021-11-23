@@ -4,41 +4,29 @@ import React from 'react';
 import { useEffect, useState } from 'react/cjs/react.development';
 import { getProject } from '../helpers/projectsData';
 
-export default function ProjectDetails({ repos }) {
+export default function ProjectDetails({ repo }) {
   const [projects, setProjects] = useState({});
-  const projectArray = [];
 
   useEffect(() => {
-    repos.map((repo) => {
-      console.warn('debug', repo);
-      getProject(repo.repoName).then((response) => response.push(projectArray));
-      setProjects(projectArray);
-      return setProjects;
-    });
-    // setProjects(projectArray);
-    // for (let i = 0; i < repos.length; i++) {
-    //   getProject(repos[i].repoName).then((response) => projectArray.push(response));
-    // }
-    // setProjects(projectArray);
+    getProject(repo.repoName).then(setProjects);
   }, []);
-
-  console.warn('list of repos', repos);
-  console.warn('project', projects.name);
 
   return (
     <>
       <div>
+        <h2>{repo.repoName}</h2>
         <hr />
-        <h3>{projects.name}</h3>
+        <h3>{projects[7]}</h3>
         <hr />
-        <a href={projects.html_url}>Go to Project</a>
+        <a href={projects[6]}>Go to Project</a>
+        <hr />
       </div>
     </>
   );
 }
 
 ProjectDetails.propTypes = {
-  repos: PropTypes.shape(PropTypes.obj),
+  repo: PropTypes.shape(PropTypes.obj),
 };
 
-ProjectDetails.defaultProps = { repos: {} };
+ProjectDetails.defaultProps = { repo: {} };

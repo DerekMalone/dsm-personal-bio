@@ -13,31 +13,21 @@ export default function Projects() {
     return () => {
       isMounted = false;
     };
-    // need to resolve how this is pulling repos and calling projects...
-    // getProject('you-do-app').then(setProjects);
-    // repos.forEach((repo) => {
-    //   getProject(repo).then(setProjects); // ((prevState) => [...prevState, newRepo])
-    // });
-    // repos.map(() => getProject().then(setProjects));
-    // setProjects(mappedRepos);
-    // ;
   }, []);
-
-  // console.warn('repo name', repos[0].repoName);
-  // console.warn('repos', repos);
 
   return (
     <div>
-      <ProjectDetails repos={repos} />
-      {/* { repos ? (
+      {/* <ProjectDetails key={repos.repoName} repos={repos} /> */}
+      {repos ? (
         <>
           {repos.map((repo) => (
-            <ProjectDetails repos={repo} />
+            <ProjectDetails key={repo.repoName} repo={repo} />
           ))}
         </>
       ) : (
         'No Projects'
-      )}; */}
+      )}
+      ;
     </div>
   );
 }
