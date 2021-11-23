@@ -15,8 +15,6 @@ export default function AboutMe() {
     };
   }, []);
 
-  console.warn('About Me', aboutMe);
-
   return (
     <div>
       <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
