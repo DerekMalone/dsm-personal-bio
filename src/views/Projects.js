@@ -15,8 +15,6 @@ export default function Projects() {
     };
   }, []);
 
-  console.warn(repos);
-
   return (
     <div>
       {repos ? (
