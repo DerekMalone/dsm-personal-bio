@@ -23,8 +23,8 @@ const getRepoList = async () => {
 //     .catch(reject);
 // });
 
-const getProject = async (repoArray) => {
-  const repo = await axios.get(`${gitHubUrl}/repos/DerekMalone/${repoArray}`);
+const getProject = async (repoName) => {
+  const repo = await axios.get(`${gitHubUrl}/repos/DerekMalone/${repoName}`);
   const repoData = Object.values(repo.data);
   return repoData;
 };
