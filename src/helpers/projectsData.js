@@ -23,10 +23,31 @@ const getRepoList = async () => {
 //     .catch(reject);
 // });
 
-const getProject = async (repoArray) => {
-  const repo = await axios.get(`${gitHubUrl}/repos/DerekMalone/${repoArray}`);
+const getProject = async (repoName) => {
+  const repo = await axios.get(`${gitHubUrl}/repos/DerekMalone/${repoName}`);
   const repoData = Object.values(repo.data);
   return repoData;
 };
 
-export { getProject, getRepoList };
+const createRepo = (repoItem) => new Promise((resolve, reject) => {
+  axios
+    .post(`${dbUrl}/projects.json`, repoItem)
+    .then((obj) => {
+      const fbkey = { firebaseKey: obj.data.id };
+      axios.patch(`${dbUrl}/projects/${obj.data.id}.json`, fbkey).then(() => {
+        getRepoList().then(resolve);
+      });
+    })
+    .catch(reject);
+});
+
+const getSingleRepo = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .patch(`${dbUrl}/projects/${fbKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
+export {
+  getProject, getRepoList, createRepo, getSingleRepo,
+};
