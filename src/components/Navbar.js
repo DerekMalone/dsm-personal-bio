@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   Collapse,
   Navbar,
@@ -10,7 +10,7 @@ import {
   NavLink,
 } from 'reactstrap';
 
-const BioNavbar = () => {
+const BioNavbar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -20,20 +20,42 @@ const BioNavbar = () => {
       <Navbar color="light" expand="md" light>
         <NavbarBrand href="/">Derek Malone</NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse navbar>
-          <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/">About Me</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/contact">Contact Info</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/tech">Tech Stacks</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/projects">Projects</NavLink>
-            </NavItem>
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="container-fluid" navbar>
+            {user ? (
+              <>
+                <NavItem>
+                  <NavLink href="/">About Me</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/contact">Contact Info</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/tech">Tech Stacks</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/projects">Projects</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/projectsForm">Projects Form</NavLink>
+                </NavItem>
+              </>
+            ) : (
+              <>
+                <NavItem>
+                  <NavLink href="/">About Me</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/contact">Contact Info</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/tech">Tech Stacks</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/projects">Projects</NavLink>
+                </NavItem>
+              </>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
@@ -41,8 +63,19 @@ const BioNavbar = () => {
   );
 };
 
-// BioNavbar.propTypes = {
+BioNavbar.propTypes = {
+  user: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      uid: PropTypes.string,
+      fullName: PropTypes.string,
+      user: PropTypes.string,
+    }),
+  ]),
+};
 
-// }
+BioNavbar.defaultProps = {
+  user: null,
+};
 
 export default BioNavbar;

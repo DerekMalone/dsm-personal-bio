@@ -29,4 +29,25 @@ const getProject = async (repoName) => {
   return repoData;
 };
 
-export { getProject, getRepoList };
+const createRepo = (repoItem) => new Promise((resolve, reject) => {
+  axios
+    .post(`${dbUrl}/projects.json`, repoItem)
+    .then((obj) => {
+      const fbkey = { firebaseKey: obj.data.id };
+      axios.patch(`${dbUrl}/projects/${obj.data.id}.json`, fbkey).then(() => {
+        getRepoList().then(resolve);
+      });
+    })
+    .catch(reject);
+});
+
+const getSingleRepo = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .patch(`${dbUrl}/projects/${fbKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
+export {
+  getProject, getRepoList, createRepo, getSingleRepo,
+};

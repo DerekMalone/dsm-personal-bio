@@ -40,8 +40,8 @@ function Initialize() {
       ) : (
         <SignIn user={user} />
       )}
-      <BioNavbar />
-      <Routes />
+      <BioNavbar user={user} />
+      <Routes user={user} />
     </>
   );
 }
