@@ -6,6 +6,7 @@ import {
   AboutMe, Contact, Projects, Tech,
 } from '../views';
 import ProjectsForm from '../components/ProjectsForm';
+import Edit from '../views/Edit';
 
 export default function Routes({ user }) {
   // const isAdmin = firebaseConfig.adminUID;
@@ -17,10 +18,30 @@ export default function Routes({ user }) {
       <Route exact path="/" component={AboutMe} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/tech" component={Tech} />
-      <Route exact path="/projects">
+      {user ? (
+        <>
+          <Route exact path="/projects">
+            <Projects user={user} />
+          </Route>
+          {/* <Projects exact path="/projects" user={user} /> */}
+          <Route exact path="/edit/:fbKey">
+            <Edit user={user} />
+          </Route>
+          {/* <Edit exact path="/edit/:fbKey" /> */}
+          <Route exact path="/projectsForm">
+            <ProjectsForm user={user} />
+          </Route>
+          {/* <ProjectsForm exact path="/projectsForm" user={user} /> */}
+        </>
+      ) : (
+        <Route exact path="/projects">
+          <Projects />
+        </Route>
+      )}
+      {/* <Route exact path="/projects">
         <Projects user={user} />
       </Route>
-      {user ? <ProjectsForm exact path="/" user={user} /> : ''}
+      {user ? <ProjectsForm exact path="/projectsForm" user={user} /> : ''} */}
     </Switch>
   );
 }
