@@ -10,15 +10,15 @@ const initialState = {
   uid: '',
 };
 
-const ProjectsForm = ({ user }) => {
+const ProjectsForm = () => {
+  // { user }
   const [formInput, setFormInput] = useState({});
   const { fbKey } = useParams();
   const history = useHistory();
 
   useEffect(() => {
     if (fbKey) {
-      getSingleRepo().then((obj) => {
-        // fbkey
+      getSingleRepo(fbKey).then((obj) => {
         setFormInput({
           firebaseKey: obj.firebaseKey,
           repoName: obj.repoName,
@@ -52,7 +52,8 @@ const ProjectsForm = ({ user }) => {
       //   });
     } else {
       console.warn('no user');
-      createRepo({ ...formInput, uid: user.uid }).then(() => {
+      createRepo({ ...formInput }).then(() => {
+        // , uid: user.uid
         resetForm();
         history.push('/');
       });
@@ -61,6 +62,7 @@ const ProjectsForm = ({ user }) => {
 
   return (
     <>
+      <h3>Add/Edit Projects</h3>
       <form className="stuff-form junk-div-style" onSubmit={handleSubmit}>
         <div>
           <input

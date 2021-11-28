@@ -9,8 +9,6 @@ export default function Contact() {
     getContactInfo().then(setContact);
   }, []);
 
-  console.warn('debug', contact);
-
   return (
     <div>
       <ContactMe contact={contact} />

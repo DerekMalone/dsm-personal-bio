@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import ProjectDetails from '../components/ProjectDetails';
 import { getRepoList } from '../helpers/projectsData';
 
-export default function Projects() {
+export default function Projects({ user }) {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function Projects() {
       {repos ? (
         <>
           {repos.map((repo) => (
-            <ProjectDetails key={repo.repoName} repo={repo} />
+            <ProjectDetails key={repo.repoName} repo={repo} user={user} />
           ))}
         </>
       ) : (
@@ -30,3 +31,9 @@ export default function Projects() {
     </div>
   );
 }
+
+Projects.propTypes = {
+  user: PropTypes.shape(PropTypes.obj),
+};
+
+Projects.defaultProps = { user: null };
