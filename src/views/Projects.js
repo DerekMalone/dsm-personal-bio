@@ -17,7 +17,7 @@ export default function Projects({ user }) {
   }, []);
 
   return (
-    <div>
+    <div className="card-box">
       {repos ? (
         <>
           {repos.map((repo) => (
@@ -27,7 +27,6 @@ export default function Projects({ user }) {
       ) : (
         'No Projects'
       )}
-      ;
     </div>
   );
 }

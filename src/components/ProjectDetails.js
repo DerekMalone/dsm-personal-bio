@@ -17,22 +17,21 @@ export default function ProjectDetails({ repo, user }) {
   return (
     <>
       {user ? (
-        <div>
+        <div className="card-container">
           <h2>{repo.repoName}</h2>
-          <hr />
           <h3>{projects[7]}</h3>
-          <hr />
           <a href={projects[6]}>Go to Project</a>
-          <hr />
+
           <div className="card-btn-container">
             <Link
-              to={`/edit/${repo.id}`}
+              to={`/edit/${repo.firebaseKey}`}
               type="button"
               className="btn btn-success"
             >
               Edit
             </Link>
           </div>
+          <hr />
         </div>
       ) : (
         <div>
