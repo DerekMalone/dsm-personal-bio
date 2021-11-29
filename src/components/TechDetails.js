@@ -10,12 +10,32 @@ export default function TechDetails() {
   return (
     <>
       <Techdiv>
-        <i className="fab fa-react" />
-        <i className="fab fa-js" />
-        <i className="fab fa-sass" />
-        <i className="fab fa-html5" />
-        <i className="fab fa-github" />
-        <i className="fab fa-bootstrap" />
+        <img className="react-logo" src="/logo512.png" alt="React.js logo" />
+        <img
+          className="javascript-logo"
+          src="/images/JavaScript-logo.png"
+          alt="JavaScript logo"
+        />
+        <img
+          className="sass-logo"
+          src="/images/sass-logo.png"
+          alt="Sass logo"
+        />
+        <img
+          className="html5-logo"
+          src="/images/html5-logo.png"
+          alt="HTML 5 logo"
+        />
+        <img
+          className="github-logo"
+          src="/images/github-mark.png"
+          alt="GitHub logo"
+        />
+        <img
+          className="bootstrap-logo"
+          src="/images/bootstrap-logo.png"
+          alt="Bootstrap logo"
+        />
         <img
           className="postman-student-expert"
           src="/images/postman.png"
