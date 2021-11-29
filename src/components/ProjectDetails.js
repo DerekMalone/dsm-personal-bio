@@ -1,13 +1,29 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom'; // useParams,
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
+import styled from 'styled-components';
 import { getProject } from '../helpers/projectsData';
 
-// let userStatus = false;
+const ProjectDiv = styled.div`
+  justify-content: space-around;
+  align-content: space-around;
+  border: solid 2px #e07a5f;
+  border-radius: 10px;
+  width: 95vw;
+  margin: 15px;
+  background-color: #81b29a;
+
+  .name-style {
+    color: #f2cc8f;
+  }
+
+  .projects-style {
+    color: #3d405b;
+  }
+`;
 
 export default function ProjectDetails({ repo, user }) {
-  // const { fbKey } = useParams({});
   const [projects, setProjects] = useState({});
 
   useEffect(() => {
@@ -17,12 +33,14 @@ export default function ProjectDetails({ repo, user }) {
   return (
     <>
       {user ? (
-        <div className="card-container">
-          <h2>{repo.repoName}</h2>
-          <h3>{projects[7]}</h3>
-          <a href={projects[6]}>Go to Project</a>
+        <ProjectDiv>
+          <h2 className="name-style">{repo.repoName}</h2>
+          <h3 className="projects-style">{projects[7]}</h3>
 
           <div className="card-btn-container">
+            <a href={projects[6]} type="button" className="btn btn-link">
+              Go to Project
+            </a>
             <Link
               to={`/edit/${repo.firebaseKey}`}
               type="button"
@@ -31,17 +49,13 @@ export default function ProjectDetails({ repo, user }) {
               Edit
             </Link>
           </div>
-          <hr />
-        </div>
+        </ProjectDiv>
       ) : (
-        <div>
-          <h2>{repo.repoName}</h2>
-          <hr />
-          <h3>{projects[7]}</h3>
-          <hr />
+        <ProjectDiv>
+          <h2 className="name-style">{repo.repoName}</h2>
+          <h3 className="projects-style">{projects[7]}</h3>
           <a href={projects[6]}>Go to Project</a>
-          <hr />
-        </div>
+        </ProjectDiv>
       )}
     </>
   );

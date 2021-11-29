@@ -1,9 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Techdiv = styled.div`
+  display: flex;
+  flex: wrap;
+`;
 
 export default function TechDetails() {
   return (
     <>
-      <div>
+      <Techdiv>
         <i className="fab fa-react" />
         <i className="fab fa-js" />
         <i className="fab fa-sass" />
@@ -20,7 +26,7 @@ export default function TechDetails() {
           src="/images/firebase-logo-vertical.png"
           alt="firebase logo"
         />
-      </div>
+      </Techdiv>
     </>
   );
 }

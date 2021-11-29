@@ -2,17 +2,11 @@
 @import 'globals';
 
 body {
-  background-color: $favColor !important;
+  background-color: $backColor !important;
 }
 
 .card-box {
   display: flex;
-  width: 100%;
-}
-
-.card-container {
   flex-wrap: wrap;
-  justify-content: space-around;
-  border: solid 2px rgb(48, 42, 42);
-  border-radius: 10px;
+  width: 100vw;
 }
