@@ -1,63 +1,33 @@
- ## Bio Site
+# Derek Malone Persona Bio Site
 
-### Your completed personal site will be reviewed by your instructor before you start your capstone.
+## Project Overview
+This application provides details into my journey as a software engineer and what drove me to desire to become one in the first place. It gives the user easy access to contace me directly, view what tech stacks I have experience with, and view proojects that I have worked on. It has been designed to allow me to CRUD on my projects so that I may keep them up to date. 
 
-## Requirements
-- You should go through AT LEAST 4 projects (individual or group) and deployed them.
-- Each project should have a clickable link that goes to more details that includes a link to the Github Repo and Deployed App.
-- You should have real data everywhere throughout your personal site. No lorem.
-- Your site should allow some form of authentication so that you can make changes.
-- Your site should have CRUD on at least one (1) content type:
-- About, Contact, Technologies, or Projects.
+## Wireframes/ERD/Technical Flow Chart
+-
+-https://dbdiagram.io/d/618fd33a02cf5d186b545019
+-https://docs.google.com/presentation/d/1vwb60j4xTb5wODYwRE8JrScYyHtRHq8QUnvXgMma8Xo/edit#slide=id.p
 
-### README is completed with:
-- Name of the Project
-- Overview of the project
-- Link to your wireframes/prototype
-- Link to the deployed project
-- Link to your project board (yes...even though it is a part of the repo)
-- Description of the user
-- List of features
-- Screenshots of your project
-- List of contributors and links to their GH profiles
-- Link to Loom video walkthrough of your app (no more than 1 minute long! Make it great)
+## Deployed Project
+https://derek-malone-personal-bio.netlify.app
 
-### Stretch
-- CRUD on multiple content types on the site (Trust me, you will be thankful that you did!)
+## GitHub Repository
+https://github.com/DerekMalone/dsm-personal-bio
 
-## Pages for Personal Bio Site
-### About
-- Is it easy to find the personal bio?
-- Bonus points for having your own custom domain and redirecting to your deployed site
-- Does the personal bio tell the story:
-- Why do they want to go into development
-- What they love about development
-- What makes them a good developer
-- General look and usability
+## Description of the User
+The user of this application is an individual seeking to review my skills as a software engineer, be able to quickly contact me through various means, and to view a few of my favorite projects. 
 
-### Contact
-- Is it easy to find the contact information
-- Do all of the links work
-- General look and usability
+## List of Features
+-User specific views based on validation.
+-Dynamically rendered data based on API calls.
+-CRUD capabilities for a verified user.
 
-### Technologies
-- Is it easy to find where the technologies are
-- Do all the technologies have real content/not fake data
-- Do you actually have experience with the technology (can you explain what it does and why you used it)
-- General look and usability
-
-### Projects
-- Is it easy to find where the projects are
-- Do all the projects have real content/not fake data
-- Do all of the links work
-- Do all of the deployed projects work correctly
-- General look and usability
-- General look and feel of the whole site
-- Is it visually appealing
-- Is it cohesive 
+## Screenshots of Project
+![Screenshot 2021-11-29 193930](https://user-images.githubusercontent.com/77118878/143970402-34af096c-f14c-4d42-bc74-875f0655bb85.png)
+![Screenshot 2021-11-29 193957](https://user-images.githubusercontent.com/77118878/143970427-f8468655-91e1-4a71-814d-8f509597fd79.png)
 
 
-## Links to design info
-- https://dbdiagram.io/d/618fd33a02cf5d186b545019
-- https://docs.google.com/presentation/d/1vwb60j4xTb5wODYwRE8JrScYyHtRHq8QUnvXgMma8Xo/edit#slide=id.p
-- https://github.com/DerekMalone/dsm-personal-bio
+## Contributors
+- Derek Malone - https://github.com/DerekMalone
+
+## Loom Video
