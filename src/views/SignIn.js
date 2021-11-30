@@ -1,13 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import { signInUser } from '../api/auth';
+
+const BtnStyle = styled.div`
+  position: fixed;
+  bottom: 35px;
+  left: 45%;
+  opacity: 0;
+`;
 
 export default function SignIn() {
   return (
-    <div className="text-center mt-5">
-      <h1>Welcome! Sign In!</h1>
+    <BtnStyle>
       <button type="button" className="btn btn-success" onClick={signInUser}>
         Sign In
       </button>
-    </div>
+    </BtnStyle>
   );
 }
