@@ -14,7 +14,7 @@ export default function Routes({ user }) {
       <Route exact path="/" component={AboutMe} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/tech" component={Tech} />
-      {user ? (
+      {user !== null ? (
         <>
           <Route exact path="/projects">
             <Projects user={user} />

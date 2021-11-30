@@ -25,7 +25,7 @@ function Initialize() {
         };
         setUser(userObj);
       } else if (user || user === null) {
-        setUser(false);
+        setUser(null);
       }
     });
   }, []);
