@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
+// import styled from 'styled-components';
 import 'firebase/auth';
 import firebase from 'firebase/app';
 import BioNavbar from '../components/Navbar';
 import Routes from '../routes/Routes';
 import { SignIn } from '../views';
 import { signOutUser } from '../api/auth';
+
+// const SignOutStyle = styled.div`
+//   text-right
+// `;
 
 function Initialize() {
   const [user, setUser] = useState(null);
@@ -28,7 +33,7 @@ function Initialize() {
   return (
     <>
       {user ? (
-        <div>
+        <div className="text-center mt-2">
           <button
             type="button"
             className="btn btn-danger"
