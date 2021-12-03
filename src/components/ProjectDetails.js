@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { getProject } from '../helpers/projectsData';
+import { getProject, deleteSingleRepo } from '../helpers/projectsData';
 
 const ProjectDiv = styled.div`
   justify-content: space-around;
@@ -24,6 +24,13 @@ const ProjectDiv = styled.div`
 
 export default function ProjectDetails({ repo, user }) {
   const [projects, setProjects] = useState({});
+
+  const history = useHistory();
+
+  const handleDelete = () => {
+    console.warn('delete clicked', repo.firebaseKey);
+    deleteSingleRepo(repo.firebaseKey).then(() => history.push('/'));
+  };
 
   useEffect(() => {
     getProject(repo.repoName).then(setProjects);
@@ -47,6 +54,13 @@ export default function ProjectDetails({ repo, user }) {
             >
               Edit
             </Link>
+            <button
+              type="button"
+              className="btn btn-outline-danger"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
           </div>
         </ProjectDiv>
       ) : (

@@ -50,6 +50,13 @@ const getSingleRepo = (fbKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteSingleRepo = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .delete(`${dbUrl}/projects/${fbKey}.json`)
+    .then(() => getSingleRepo().then(resolve))
+    .catch(reject);
+});
+
 export {
-  getProject, getRepoList, createRepo, getSingleRepo,
+  getProject, getRepoList, createRepo, getSingleRepo, deleteSingleRepo,
 };
