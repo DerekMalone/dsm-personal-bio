@@ -1,7 +1,22 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { useParams, useHistory } from 'react-router-dom';
 import { createRepo, getSingleRepo } from '../helpers/projectsData';
+
+const FormContainer = styled.div`
+  margin: 2rem;
+`;
+
+const H3 = styled.h3`
+  align: center;
+  color: #e07a5f;
+`;
+
+const FormInput = styled.div`
+  border: solid 0.25rem #81b29a;
+  border-radius: 10px;
+`;
 
 const initialState = {
   firebaseKey: '',
@@ -11,7 +26,6 @@ const initialState = {
 };
 
 const ProjectsForm = () => {
-  // { user }
   const [formInput, setFormInput] = useState({});
   const { fbKey } = useParams();
   const history = useHistory();
@@ -61,38 +75,40 @@ const ProjectsForm = () => {
   };
 
   return (
-    <>
-      <h3>Add/Edit Projects</h3>
-      <form className="stuff-form junk-div-style" onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            className="form-control"
-            name="repoName"
-            value={formInput.repoName || ''}
-            onChange={handleChange}
-            placeholder="GitHub Repo Name"
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="url"
-            className="form-control"
-            name="repoUrl"
-            value={formInput.repoUrl || ''}
-            onChange={handleChange}
-            placeholder="GitHub Repo URL"
-            required
-          />
-        </div>
-        <div className="form-btn-group">
-          <button type="submit" className="btn btn-success">
-            {fbKey ? 'Update' : 'Submit'}
-          </button>
-        </div>
-      </form>
-    </>
+    <FormContainer>
+      <H3 className="add-edit-style">Add/Edit Projects</H3>
+      <FormInput>
+        <form className="stuff-form junk-div-style" onSubmit={handleSubmit}>
+          <div>
+            <input
+              type="text"
+              className="form-control"
+              name="repoName"
+              value={formInput.repoName || ''}
+              onChange={handleChange}
+              placeholder="GitHub Repo Name"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="url"
+              className="form-control"
+              name="repoUrl"
+              value={formInput.repoUrl || ''}
+              onChange={handleChange}
+              placeholder="GitHub Repo URL"
+              required
+            />
+          </div>
+          <div className="form-btn-group">
+            <button type="submit" className="btn btn-success">
+              {fbKey ? 'Update' : 'Submit'}
+            </button>
+          </div>
+        </form>
+      </FormInput>
+    </FormContainer>
   );
 };
 

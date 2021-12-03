@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ContactCard = styled.div`
-  display: flex;
-  margin: 5vh 20vw;
+  justify-content: center;
+  margin: 5rem 20vw;
   border: solid 2px #e07a5f;
   border-radius: 10px;
   background-color: #81b29a;
-  width: 50vw;
+  width: 75vw;
 
   .contents-style {
     flex: wrap;
@@ -16,31 +16,36 @@ const ContactCard = styled.div`
   }
 
   .contact-style {
-    margin: 5px 100%;
+    justify-content: center;
+    margin: 1rem;
     width: 100%;
     color: #f2cc8f;
   }
 
   .email-style {
-    margin: 5px 85%;
+    justify-content: center;
+    margin: 1rem;
     flex: wrap;
     width: 100%;
   }
 
   .phone-style {
-    margin: 5px 105%;
+    justify-content: center;
+    margin: 1rem;
     flex: wrap;
     width: 100%;
   }
 
   .gitHub-style {
-    margin: 5px 90%;
+    justify-content: center;
+    margin: 5px;
     flex: wrap;
     width: 100%;
   }
 
   .linked-style {
-    margin: 5px 90%;
+    justify-content: center;
+    margin: 5px;
     flex: wrap;
     width: 100%;
   }
