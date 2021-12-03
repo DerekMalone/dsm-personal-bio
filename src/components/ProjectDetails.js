@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+// import  from 'react';
 import styled from 'styled-components';
 import { getProject } from '../helpers/projectsData';
 
