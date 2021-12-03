@@ -4,7 +4,7 @@ import TechDetails from '../components/TechDetails';
 
 const Techbox = styled.div`
  .title-style {
-   flex: wrap;
+   justify-content: center;
    margin 10px 40%;
    color: #F2CC8F;
  }
