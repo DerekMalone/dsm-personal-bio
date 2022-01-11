@@ -1,7 +1,7 @@
 # Derek Malone Persona Bio Site
 
 ## Project Overview
-This application provides details into my journey as a software engineer and what drove me to desire to become one in the first place. It gives the user easy access to contace me directly, view what tech stacks I have experience with, and view proojects that I have worked on. It has been designed to allow me to CRUD on my projects so that I may keep them up to date. 
+This application provides details into my journey as a software engineer and what drove me to desire to become one in the first place. It gives the user easy access to contact me directly, view what tech stacks I have experience with, and view projects that I have worked on. It has been designed to allow me to CRUD on my projects so that I may keep them up to date. 
 
 ## Wireframes/ERD/Technical Flow Chart
 -
