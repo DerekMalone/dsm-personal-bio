@@ -6,6 +6,7 @@ import BioNavbar from '../components/Navbar';
 import Routes from '../routes/Routes';
 import { SignIn } from '../views';
 import { signOutUser } from '../api/auth';
+import firebaseConfig from '../api/apiKeys';
 
 // const SignOutStyle = styled.div`
 //   text-right
@@ -13,23 +14,32 @@ import { signOutUser } from '../api/auth';
 
 function Initialize() {
   const [user, setUser] = useState(null);
+  // const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
     // Would like to attempt to use Service Accounts -> Firebase Admin SDK if possible (https://github.com/nss-evening-cohort-16/evening-client-side/discussions/120)
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
-        const userObj = {
+        let userObj = {
           uid: authed.uid,
           fullName: authed.displayName,
           user: authed.email.split('@')[0],
+          isAdmin: null,
         };
         setUser(userObj);
+        if (authed && userObj.uid === firebaseConfig.adminUID) {
+          userObj = {
+            isAdmin: firebaseConfig.adminUID,
+          };
+          setUser(userObj);
+        }
       } else if (user || user === null) {
         setUser(null);
       }
     });
   }, []);
 
+  console.warn(user);
   return (
     <>
       {user ? (
