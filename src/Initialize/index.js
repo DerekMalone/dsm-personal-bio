@@ -20,19 +20,19 @@ function Initialize() {
     // Would like to attempt to use Service Accounts -> Firebase Admin SDK if possible (https://github.com/nss-evening-cohort-16/evening-client-side/discussions/120)
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
-        let userObj = {
+        const userObj = {
           uid: authed.uid,
           fullName: authed.displayName,
           user: authed.email.split('@')[0],
-          isAdmin: null,
+          isAdmin: authed.uid === firebaseConfig.adminUID,
         };
         setUser(userObj);
-        if (authed && userObj.uid === firebaseConfig.adminUID) {
-          userObj = {
-            isAdmin: firebaseConfig.adminUID,
-          };
-          setUser(userObj);
-        }
+        // if (authed && userObj.uid === firebaseConfig.adminUID) {
+        //   userObj = {
+        //     isAdmin: firebaseConfig.adminUID,
+        //   };
+        //   setUser(userObj);
+        // }
       } else if (user || user === null) {
         setUser(null);
       }
