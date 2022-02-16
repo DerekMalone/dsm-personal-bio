@@ -57,6 +57,12 @@ const deleteSingleRepo = (fbKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateSingleRepo = (repoObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/projects/${repoObj.firebaseKey}.json`, repoObj)
+    .then(() => getSingleRepo().then(resolve))
+    .catch(reject);
+});
+
 export {
-  getProject, getRepoList, createRepo, getSingleRepo, deleteSingleRepo,
+  getProject, getRepoList, createRepo, getSingleRepo, deleteSingleRepo, updateSingleRepo,
 };

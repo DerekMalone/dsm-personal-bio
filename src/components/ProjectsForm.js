@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useParams, useHistory } from 'react-router-dom';
-import { createRepo, getSingleRepo } from '../helpers/projectsData';
+import { createRepo, getSingleRepo, updateSingleRepo } from '../helpers/projectsData';
 
 const FormContainer = styled.div`
   margin: 2rem;
@@ -59,11 +59,10 @@ const ProjectsForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (fbKey) {
-      console.warn('user active');
-      //   updateItem(formInput).then(() => {
-      resetForm();
-      history.push('/');
-      //   });
+      updateSingleRepo(formInput).then(() => {
+        resetForm();
+        history.push('/projects');
+      });
     } else {
       console.warn('no user');
       createRepo({ ...formInput }).then(() => {

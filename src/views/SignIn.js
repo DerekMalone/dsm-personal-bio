@@ -6,7 +6,7 @@ const BtnStyle = styled.div`
   position: fixed;
   bottom: 35px;
   left: 45%;
-  opacity: 0;
+  opacity: 50;
 `;
 
 export default function SignIn() {
