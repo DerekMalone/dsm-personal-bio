@@ -15,9 +15,15 @@ const BioNavbar = ({ user }) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const styleObject = {
+    Navbar: {
+      'background-color': '#0E1D65',
+    },
+  };
+
   return (
     <div>
-      <Navbar color="$borderColor" id="bootstrap-overrides" expand="md" light>
+      <Navbar color="$borderColor" style={styleObject.Navbar} id="bootstrap-overrides" expand="md" light>
         <NavbarBrand href="/">Derek Malone</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
