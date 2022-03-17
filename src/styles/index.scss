@@ -10,3 +10,9 @@ body {
   flex-wrap: wrap;
   width: 100vw;
 }
+
+#bootstrap-overrides{
+  Navbar{
+    background-color: $borderColor;
+  }
+}

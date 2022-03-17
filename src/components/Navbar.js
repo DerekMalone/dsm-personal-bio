@@ -17,7 +17,7 @@ const BioNavbar = ({ user }) => {
 
   return (
     <div>
-      <Navbar color="light" expand="md" light>
+      <Navbar color="$borderColor" id="bootstrap-overrides" expand="md" light>
         <NavbarBrand href="/">Derek Malone</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
