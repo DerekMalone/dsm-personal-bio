@@ -24,10 +24,11 @@ const BioNavbar = ({ user }) => {
       color: '#EDF2F1',
     },
   };
+  // style={styleObject.Navbar}
 
   return (
     <div>
-      <Navbar dark style={styleObject.Navbar} expand="md">
+      <Navbar dark expand="md">
         <NavbarBrand style={styleObject.NavItem} href="/">
           Derek Malone
         </NavbarBrand>
