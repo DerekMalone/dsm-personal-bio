@@ -18,20 +18,28 @@ const BioNavbar = ({ user }) => {
   const styleObject = {
     Navbar: {
       'background-color': '#0E1D65',
+      color: '#EDF2F1',
+    },
+    NavItem: {
+      color: '#EDF2F1',
     },
   };
 
   return (
     <div>
-      <Navbar color="$borderColor" style={styleObject.Navbar} id="bootstrap-overrides" expand="md" light>
-        <NavbarBrand href="/">Derek Malone</NavbarBrand>
+      <Navbar dark style={styleObject.Navbar} expand="md">
+        <NavbarBrand style={styleObject.NavItem} href="/">
+          Derek Malone
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="container-fluid" navbar>
             {user ? (
               <>
                 <NavItem>
-                  <NavLink href="/">About Me</NavLink>
+                  <NavLink className="nav-span" id="span-id" href="/">
+                    About Me
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/contact">Contact Info</NavLink>
