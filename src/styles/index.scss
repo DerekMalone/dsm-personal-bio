@@ -11,10 +11,10 @@ body {
   width: 100vw;
 }
 
-// a:link {
-//   color: inherit !important;
-// }
-
 .navbar {
   background-color: #0E1D65;
+}
+
+.nav-span {
+  color: $secondaryFontColor !important;
 }
