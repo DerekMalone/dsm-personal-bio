@@ -18,3 +18,76 @@ body {
 .nav-span {
   color: $secondaryFontColor !important;
 }
+
+.banner-style {
+  height: 130px;
+left: 0px;
+top: 0px;
+
+border: 3px solid #650E1D;
+box-sizing: border-box;
+}
+
+.front-page-photo {
+  width: 226px;
+height: 339px;
+
+// background: url(B1Zoo6c.jpg);
+border: 3px solid #650E1D;
+box-sizing: border-box;
+// transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.about-me-pannel {
+  width: 528px;
+height: 339px;
+
+background: rgba(101, 14, 29, 0.5);
+}
+
+.contact-me-bar {
+  position: absolute;
+width: 855px;
+height: 68px;
+
+background: #650E1D;
+}
+
+.footer-style {
+  position: absolute;
+width: 855px;
+height: 25px;
+
+background: #0E1D65;
+
+
+/* Rectangle 2 */
+
+
+position: absolute;
+width: 145px;
+height: 17px;
+
+background: #EDF2F1;
+border: 2px solid #650E1D;
+box-sizing: border-box;
+
+
+/* Designed by: Derek Malone */
+
+
+position: absolute;
+width: 133px;
+height: 13px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 13px;
+/* identical to box height */
+
+
+color: #650E1D;
+
+}

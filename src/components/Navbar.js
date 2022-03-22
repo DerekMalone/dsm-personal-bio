@@ -31,17 +31,17 @@ const BioNavbar = ({ user }) => {
     },
   };
 
-  const styledNavFont = {
-    'li.a': {
-      color: '#EDF2F1',
-    },
-    'NavItem.h4': {
-      color: '#EDF2F1',
-    },
-    'NavLink.styledFont': {
-      color: '#EDF2F1',
-    },
-  };
+  // const styledNavFont = {
+  //   'li.a': {
+  //     color: '#EDF2F1',
+  //   },
+  //   'NavItem.h4': {
+  //     color: '#EDF2F1',
+  //   },
+  //   // 'NavLink.styledFont': {
+  //   //   color: '#EDF2F1',
+  //   // },
+  // };
 
   return (
     <div>
