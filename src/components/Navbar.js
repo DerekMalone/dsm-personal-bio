@@ -18,6 +18,10 @@ const BioNavbar = ({ user }) => {
   const styleObject = {
     Navbar: {
       'background-color': '#0E1D65',
+      color: '#EDF2F1',
+    },
+    NavItem: {
+      color: '#EDF2F1',
     },
     NavLink: {
       color: '#EDF2F1',
@@ -41,46 +45,62 @@ const BioNavbar = ({ user }) => {
 
   return (
     <div>
-      <Navbar style={styleObject.Navbar} expand="md" light>
-        <NavbarBrand style={styleObject.NavLink} href="/">Derek Malone</NavbarBrand>
+      <Navbar dark expand="md">
+        <NavbarBrand style={styleObject.NavItem} href="/">
+          Derek Malone
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav style={styleObject.NavLink} className="container-fluid" navbar>
             {user ? (
               <>
-                <NavItem style={styledNavFont.NavItem}>
-                  <NavLink style={styledNavFont.NavItem} href="/">
-                    <h4 style={styledNavFont.NavItem} className="navFont" id="styledFont">
-                      About Me
-                    </h4>
+                <NavItem>
+                  <NavLink className="nav-span" href="/">
+                    About Me
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/contact" style={styleObject.NavLink}>Contact Info</NavLink>
+                  <NavLink className="nav-span" href="/contact">
+                    Contact Info
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/tech" style={styleObject.NavLink}>Tech Stacks</NavLink>
+                  <NavLink className="nav-span" href="/tech">
+                    Tech Stacks
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/projects" style={styleObject.NavLink}>Projects</NavLink>
+                  <NavLink className="nav-span" href="/projects">
+                    Projects
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/projectsForm" style={styleObject.NavLink}>Projects Form</NavLink>
+                  <NavLink className="nav-span" href="/projectsForm">
+                    Projects Form
+                  </NavLink>
                 </NavItem>
               </>
             ) : (
               <>
                 <NavItem>
-                  <NavLink href="/">About Me</NavLink>
+                  <NavLink className="nav-span" href="/">
+                    About Me
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/contact">Contact Info</NavLink>
+                  <NavLink className="nav-span" href="/contact">
+                    Contact Info
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/tech">Tech Stacks</NavLink>
+                  <NavLink className="nav-span" href="/tech">
+                    Tech Stacks
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/projects">Projects</NavLink>
+                  <NavLink className="nav-span" href="/projects">
+                    Projects
+                  </NavLink>
                 </NavItem>
               </>
             )}

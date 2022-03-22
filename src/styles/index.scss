@@ -11,8 +11,10 @@ body {
   width: 100vw;
 }
 
-#bootstrap-overrides{
-  Navbar{
-    background-color: $borderColor;
-  }
+.navbar {
+  background-color: #0E1D65;
+}
+
+.nav-span {
+  color: $secondaryFontColor !important;
 }
