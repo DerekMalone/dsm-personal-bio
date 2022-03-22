@@ -23,7 +23,25 @@ const BioNavbar = ({ user }) => {
     NavItem: {
       color: '#EDF2F1',
     },
+    NavLink: {
+      color: '#EDF2F1',
+    },
+    navFont: {
+      color: '#EDF2F1 !important',
+    },
   };
+
+  // const styledNavFont = {
+  //   'li.a': {
+  //     color: '#EDF2F1',
+  //   },
+  //   'NavItem.h4': {
+  //     color: '#EDF2F1',
+  //   },
+  //   // 'NavLink.styledFont': {
+  //   //   color: '#EDF2F1',
+  //   // },
+  // };
 
   return (
     <div>
@@ -33,7 +51,7 @@ const BioNavbar = ({ user }) => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="container-fluid" navbar>
+          <Nav style={styleObject.NavLink} className="container-fluid" navbar>
             {user ? (
               <>
                 <NavItem>
