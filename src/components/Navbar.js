@@ -19,31 +19,53 @@ const BioNavbar = ({ user }) => {
     Navbar: {
       'background-color': '#0E1D65',
     },
+    NavLink: {
+      color: '#EDF2F1',
+    },
+    navFont: {
+      color: '#EDF2F1 !important',
+    },
+  };
+
+  const styledNavFont = {
+    'li.a': {
+      color: '#EDF2F1',
+    },
+    'NavItem.h4': {
+      color: '#EDF2F1',
+    },
+    'NavLink.styledFont': {
+      color: '#EDF2F1',
+    },
   };
 
   return (
     <div>
-      <Navbar color="$borderColor" style={styleObject.Navbar} id="bootstrap-overrides" expand="md" light>
-        <NavbarBrand href="/">Derek Malone</NavbarBrand>
+      <Navbar style={styleObject.Navbar} expand="md" light>
+        <NavbarBrand style={styleObject.NavLink} href="/">Derek Malone</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="container-fluid" navbar>
+          <Nav style={styleObject.NavLink} className="container-fluid" navbar>
             {user ? (
               <>
-                <NavItem>
-                  <NavLink href="/">About Me</NavLink>
+                <NavItem style={styledNavFont.NavItem}>
+                  <NavLink style={styledNavFont.NavItem} href="/">
+                    <h4 style={styledNavFont.NavItem} className="navFont" id="styledFont">
+                      About Me
+                    </h4>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/contact">Contact Info</NavLink>
+                  <NavLink href="/contact" style={styleObject.NavLink}>Contact Info</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/tech">Tech Stacks</NavLink>
+                  <NavLink href="/tech" style={styleObject.NavLink}>Tech Stacks</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/projects">Projects</NavLink>
+                  <NavLink href="/projects" style={styleObject.NavLink}>Projects</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/projectsForm">Projects Form</NavLink>
+                  <NavLink href="/projectsForm" style={styleObject.NavLink}>Projects Form</NavLink>
                 </NavItem>
               </>
             ) : (
