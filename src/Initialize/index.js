@@ -1,11 +1,12 @@
+/* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
 // import styled from 'styled-components';
 import 'firebase/auth';
 import firebase from 'firebase/app';
 import BioNavbar from '../components/Navbar';
 import Routes from '../routes/Routes';
-import { SignIn } from '../views';
 import { signOutUser } from '../api/auth';
+import Footer from '../views/Footer';
 import firebaseConfig from '../api/apiKeys';
 
 // const SignOutStyle = styled.div`
@@ -39,7 +40,8 @@ function Initialize() {
     });
   }, []);
 
-  console.warn(user);
+  // TODO: Need to figure out why this warn was here...
+  // console.warn(user);
   return (
     <>
       {user ? (
@@ -49,11 +51,13 @@ function Initialize() {
             className="btn btn-danger"
             onClick={signOutUser}
           >
-            Sign Out
+            Sign Out.
           </button>
         </div>
       ) : (
-        <SignIn user={user} />
+        // <SignIn user={user} />
+
+        <Footer user={user} />
       )}
       <BioNavbar user={user} />
       <Routes user={user} />
