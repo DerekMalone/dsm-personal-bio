@@ -11,7 +11,7 @@ const FooterDiv = styled.div`
   height: 20px;
   margin: 0 auto;
 `;
-
+// trying to resolve issues.
 export default function Footer() {
   return (
     <FooterDiv>
