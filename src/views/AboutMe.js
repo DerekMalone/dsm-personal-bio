@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AboutMeDetail from '../components/AboutMeDetail';
-import getAboutMe from '../helpers/amoutMeData';
+import getAboutMe from '../helpers/aboutMeData';
 
 export default function AboutMe() {
   const [aboutMe, setAboutMe] = useState({});
