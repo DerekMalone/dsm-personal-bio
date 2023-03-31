@@ -11,10 +11,6 @@ const Container = styled.div`
     justify-content: space-around;
   }
 
-  .infoContainer {
-    border: 5px solid black;
-  }
-
   .about-font-style {
     color: #81b29a;
   }
@@ -29,6 +25,12 @@ const Container = styled.div`
     color: #f2cc8f;
   }
 `;
+
+/*
+.infoContainer {
+    border: 5px solid black;
+  }
+*/
 
 export default function AboutMeDetail({ aboutMe }) {
   return (

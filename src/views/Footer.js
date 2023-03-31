@@ -1,12 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import {
-//   solid,
-//   regular,
-//   brands,
-//   icon,
-// } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { signInUser } from '../api/auth';
 
 // TODO: Get the footer to actually be a footer and not displayed in the middle of the screen.
@@ -38,14 +31,16 @@ export default function Footer() {
       {
         // need useNav? need to change from button to ul with li...
       }
-      <ul>
+      <button type="button" onClick={signInUser}>
+        Derek Malone est 1989
+      </button>
+      {/* <ul>
         <li>
           <a href="/AboutMe" onClick={signInUser}>
-            <FontAwesomeIcon icon="fa-solid fa-rectangle-code" />
             Derek Malone est 1989
           </a>
         </li>
-      </ul>
+      </ul> */}
     </FooterDiv>
   );
 }

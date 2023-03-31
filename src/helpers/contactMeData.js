@@ -1,5 +1,6 @@
+/* eslint-disable implicit-arrow-linebreak */
 import axios from 'axios';
-import firebaseConfig from '../api/apiKeys';
+import { firebaseConfig } from '../api/apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
@@ -9,11 +10,12 @@ const dbUrl = firebaseConfig.databaseURL;
 //   return contInfo;
 // };
 
-const getContactInfo = () => new Promise((resolve, reject) => {
-  axios
-    .get(`${dbUrl}/contact-me.json`)
-    .then((response) => resolve(Object.values(response.data)[0]))
-    .catch(reject);
-});
+const getContactInfo = () =>
+  new Promise((resolve, reject) => {
+    axios
+      .get(`${dbUrl}/contact-me.json`)
+      .then((response) => resolve(Object.values(response.data)[0]))
+      .catch(reject);
+  });
 
 export default getContactInfo;

@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { signOutUser } from '../api/auth';
 
 const BioNavbar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,11 +56,6 @@ const BioNavbar = ({ user }) => {
             {user ? (
               <>
                 <NavItem>
-                  <NavLink className="nav-span" href="/">
-                    About Me
-                  </NavLink>
-                </NavItem>
-                <NavItem>
                   <NavLink className="nav-span" href="/contact">
                     Contact Info
                   </NavLink>
@@ -79,14 +75,18 @@ const BioNavbar = ({ user }) => {
                     Projects Form
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={signOutUser}
+                  >
+                    Sign Out.
+                  </button>
+                </NavItem>
               </>
             ) : (
               <>
-                <NavItem>
-                  <NavLink className="nav-span" href="/">
-                    About Me
-                  </NavLink>
-                </NavItem>
                 <NavItem>
                   <NavLink className="nav-span" href="/contact">
                     Contact Info
