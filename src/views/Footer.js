@@ -5,7 +5,6 @@ import { signInUser } from '../api/auth';
 // TODO: Get the footer to actually be a footer and not displayed in the middle of the screen.
 
 const FooterDiv = styled.div`
-  position: absolute;
   bottom: 0;
   height: 20px;
   margin: 0 auto;
@@ -18,6 +17,7 @@ const FooterDiv = styled.div`
     text-decoration: underline;
   }
 `;
+// position: absolute;
 // use this link for flexbox footer style setup:https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-multi-level-sticky-footer-with-flexbox--cms-33341
 // modify to suit my needs.
 
@@ -27,13 +27,16 @@ const FooterDiv = styled.div`
 
 export default function Footer() {
   return (
-    <FooterDiv>
+    <FooterDiv className="footer-container">
       {
         // need useNav? need to change from button to ul with li...
       }
-      <button type="button" onClick={signInUser}>
+      <div>
         Derek Malone est 1989
-      </button>
+        <button className="admn-btn" type="button" onClick={signInUser}>
+          .
+        </button>
+      </div>
       {/* <ul>
         <li>
           <a href="/AboutMe" onClick={signInUser}>

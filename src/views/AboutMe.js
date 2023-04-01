@@ -17,13 +17,13 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <>
+    <div className="main-content">
       <div>
         <BannerImage />
       </div>
       <div>
         <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
       </div>
-    </>
+    </div>
   );
 }

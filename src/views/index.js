@@ -3,4 +3,5 @@ export { default as Contact } from './Contact';
 export { default as Projects } from './Projects';
 export { default as Tech } from './Tech';
 export { default as SignIn } from './SignIn';
+export { default as Admin } from './Admin';
 export { default as Authenticated } from './Authenticated';

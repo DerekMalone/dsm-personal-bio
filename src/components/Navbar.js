@@ -71,8 +71,8 @@ const BioNavbar = ({ user }) => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-span" href="/projectsForm">
-                    Projects Form
+                  <NavLink className="nav-span" href="/admin">
+                    Admin
                   </NavLink>
                 </NavItem>
                 <NavItem>

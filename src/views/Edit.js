@@ -14,7 +14,7 @@ export default function Edit() {
   });
 
   return (
-    <div>
+    <div className="main-content">
       <div className="formContainer">
         <ProjectsForm user={editItem} />
       </div>

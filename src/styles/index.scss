@@ -3,6 +3,9 @@
 
 body {
   background-color: $backColor !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .card-box {
@@ -53,6 +56,17 @@ height: 68px;
 background: #650E1D;
 }
 
+
+.main-content {
+  border: 3px solid $accentColor;
+  min-height: 100vh;
+}
+
+.footer-container {
+  flex: 0;
+  // border: 3px solid $borderColor;
+}
+
 .footer-style {
   position: absolute;
 width: 855px;
@@ -101,4 +115,9 @@ color: #650E1D;
 .image-container {
   border: 3px solid black;
   margin: 15px;
+}
+
+.admn-btn {
+  background-color: $backColor;
+  border: none;
 }

@@ -12,7 +12,7 @@ const Techbox = styled.div`
 
 export default function Tech() {
   return (
-    <Techbox>
+    <Techbox className="main-content">
       <h1 className="title-style">Tech Stacks</h1>
       <TechDetails />
     </Techbox>

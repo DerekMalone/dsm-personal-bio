@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 
   .photo {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 
@@ -24,25 +24,22 @@ const Container = styled.div`
     justify-content: center;
     color: #f2cc8f;
   }
-`;
-
-/*
-.infoContainer {
+  .infoContainer {
+    flex: wrap;
     border: 5px solid black;
+    width: 100vw;
   }
-*/
+`;
 
 export default function AboutMeDetail({ aboutMe }) {
   return (
     <Container>
-      <a href={aboutMe.photoHref}>
-        <img
-          className="photo"
-          src={aboutMe.photoUrl}
-          title={aboutMe.photoTitle}
-          alt={aboutMe.name}
-        />
-      </a>
+      <img
+        className="photo"
+        src={aboutMe.photoUrl}
+        title={aboutMe.photoTitle}
+        alt={aboutMe.name}
+      />
       <div className="infoContainer">
         <div className="name-style">
           <h1>{aboutMe.name}</h1>
