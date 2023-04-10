@@ -1,5 +1,7 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import axios from 'axios';
-import firebaseConfig from '../api/apiKeys';
+import { firebaseConfig } from '../api/apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 const gitHubUrl = 'https://api.github.com';
@@ -29,34 +31,35 @@ const getProject = async (repoName) => {
   return repoData;
 };
 
-const createRepo = (repoItem) => new Promise((resolve, reject) => {
-  axios
-    .post(`${dbUrl}/projects.json`, repoItem)
-    .then((obj) => {
-      const fbkey = { firebaseKey: obj.data.name };
-      axios
-        .patch(`${dbUrl}/projects/${obj.data.name}.json`, fbkey)
-        .then(() => {
-          getRepoList().then(resolve);
-        });
-    })
-    .catch(reject);
-});
+const createRepo = (repoItem) =>
+  new Promise((resolve, reject) => {
+    axios
+      .post(`${dbUrl}/projects.json`, repoItem)
+      .then((obj) => {
+        const fbkey = { firebaseKey: obj.data.name };
+        axios
+          .patch(`${dbUrl}/projects/${obj.data.name}.json`, fbkey)
+          .then(() => {
+            getRepoList().then(resolve);
+          });
+      })
+      .catch(reject);
+  });
 
-const getSingleRepo = (fbKey) => new Promise((resolve, reject) => {
-  axios
-    .get(`${dbUrl}/projects/${fbKey}.json`)
-    .then((response) => resolve(response.data))
-    .catch(reject);
-});
+const getSingleRepo = (fbKey) =>
+  new Promise((resolve, reject) => {
+    axios
+      .get(`${dbUrl}/projects/${fbKey}.json`)
+      .then((response) => resolve(response.data))
+      .catch(reject);
+  });
 
-const deleteSingleRepo = (fbKey) => new Promise((resolve, reject) => {
-  axios
-    .delete(`${dbUrl}/projects/${fbKey}.json`)
-    .then(() => getSingleRepo().then(resolve))
-    .catch(reject);
-});
+const deleteSingleRepo = (fbKey) =>
+  new Promise((resolve, reject) => {
+    axios
+      .delete(`${dbUrl}/projects/${fbKey}.json`)
+      .then(() => getSingleRepo().then(resolve))
+      .catch(reject);
+  });
 
-export {
-  getProject, getRepoList, createRepo, getSingleRepo, deleteSingleRepo,
-};
+export { getProject, getRepoList, createRepo, getSingleRepo, deleteSingleRepo };

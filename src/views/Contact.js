@@ -10,7 +10,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <div>
+    <div className="main-content">
       <ContactMe contact={contact} />
     </div>
   );

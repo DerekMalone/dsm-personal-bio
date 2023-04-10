@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { signOutUser } from '../api/auth';
 
 const BioNavbar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,13 +56,8 @@ const BioNavbar = ({ user }) => {
             {user ? (
               <>
                 <NavItem>
-                  <NavLink className="nav-span" href="/">
-                    About Me
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-span" href="/contact">
-                    Contact Info
+                  <NavLink className="nav-span" href="/projects">
+                    Projects
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -70,23 +66,27 @@ const BioNavbar = ({ user }) => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-span" href="/projects">
-                    Projects
+                  <NavLink className="nav-span" href="/contact">
+                    Contact
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-span" href="/projectsForm">
-                    Projects Form
+                  <NavLink className="nav-span" href="/admin">
+                    Admin
                   </NavLink>
+                </NavItem>
+                <NavItem>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={signOutUser}
+                  >
+                    Sign Out.
+                  </button>
                 </NavItem>
               </>
             ) : (
               <>
-                <NavItem>
-                  <NavLink className="nav-span" href="/">
-                    About Me
-                  </NavLink>
-                </NavItem>
                 <NavItem>
                   <NavLink className="nav-span" href="/contact">
                     Contact Info

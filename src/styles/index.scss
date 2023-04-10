@@ -1,8 +1,10 @@
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'globals';
 
 body {
   background-color: $backColor !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .card-box {
@@ -38,11 +40,47 @@ box-sizing: border-box;
 // transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
+.about-me-detail-container {
+  display: flex;
+  margin: 15px;
+  border: 5px solid black;
+}
+  .about-style {
+    justify-content: space-around;
+  }
+
+  .about-font-style {
+    color: $primaryFontColor;
+  }
+
+  .photo {
+    width: 50%;
+    height: auto;
+  }
+
+  .infoContainer {
+    flex: wrap;
+    border: 5px solid black;
+    width: 100vw;
+    background-color: $aboutMeBlockColor;
+  }
+
 .about-me-pannel {
   width: 528px;
 height: 339px;
 
 background: rgba(101, 14, 29, 0.5);
+}
+
+.about-me-contact {
+  height: 3em;
+  background: $accentColor;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.about-me-contact-font {
+  color: $secondaryFontColor !important;
 }
 
 .contact-me-bar {
@@ -51,6 +89,66 @@ width: 855px;
 height: 68px;
 
 background: #650E1D;
+}
+
+.project-detail {
+  justify-content: space-around;
+  align-content: space-around;
+  border: solid 2px $borderColor;
+  border-radius: 10px;
+  width: 95vw;
+  margin: 15px;
+  background-color: $aboutMeBlockColor;
+}
+  .name-style {
+    text-align: center;
+    padding: 1%;
+    color: $primaryFontColor;
+  }
+
+  .projects-style {
+    padding: 1%;
+    color: $primaryFontColor;
+  }
+
+  .project-form-container {
+    padding: 1%;
+    width: 95vw;
+    margin: 15px;
+    border: solid 0.25rem $borderColor;
+    border-radius: 10px;
+  }
+
+  .add-edit-style {
+    text-align: center;
+    color: $largeFontColor;
+  }
+  // .project-form-input{
+  //   border: solid 0.25rem #81b29a;
+
+  // }
+
+
+.main-content {
+  border: 3px solid $accentColor;
+  min-height: 100vh;
+  background-color: $backColor;
+}
+
+.footer-container {
+  // justify-content: center;
+  flex: 0;
+  background: #0E1D65;
+  // border: 2px solid $accentColor;
+  // border: 3px solid $borderColor;
+}
+
+.footer-text {
+  background: $backColor;
+  border: 3px solid $borderColor;
+  text-align: center;
+  
+  color: $accentColor;
 }
 
 .footer-style {
@@ -90,4 +188,25 @@ line-height: 13px;
 
 color: #650E1D;
 
+}
+
+.banner-image {
+  
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  border: 3px solid $accentColor;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.admn-btn {
+  background-color: $backColor;
+  border: none;
+}
+
+.card-btn-container {
+  padding: 1%;
 }

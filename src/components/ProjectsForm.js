@@ -1,22 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { useParams, useHistory } from 'react-router-dom';
 import { createRepo, getSingleRepo } from '../helpers/projectsData';
-
-const FormContainer = styled.div`
-  margin: 2rem;
-`;
-
-const H3 = styled.h3`
-  align: center;
-  color: #e07a5f;
-`;
-
-const FormInput = styled.div`
-  border: solid 0.25rem #81b29a;
-  border-radius: 10px;
-`;
 
 const initialState = {
   firebaseKey: '',
@@ -75,9 +60,9 @@ const ProjectsForm = () => {
   };
 
   return (
-    <FormContainer>
-      <H3 className="add-edit-style">Add/Edit Projects</H3>
-      <FormInput>
+    <form className="project-form-container">
+      <h3 className="add-edit-style">Add/Edit Projects</h3>
+      <formInput className="project-form-input">
         <form className="stuff-form junk-div-style" onSubmit={handleSubmit}>
           <div>
             <input
@@ -107,8 +92,8 @@ const ProjectsForm = () => {
             </button>
           </div>
         </form>
-      </FormInput>
-    </FormContainer>
+      </formInput>
+    </form>
   );
 };
 

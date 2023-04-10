@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AboutMeDetail from '../components/AboutMeDetail';
-import getAboutMe from '../helpers/amoutMeData';
+import getAboutMe from '../helpers/aboutMeData';
+import BannerImage from '../components/BannerImage';
 
 export default function AboutMe() {
   const [aboutMe, setAboutMe] = useState({});
@@ -16,8 +17,18 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div>
-      <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
+    <div className="main-content">
+      <div>
+        <BannerImage />
+      </div>
+      <div>
+        <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
+      </div>
+      <div className="about-me-contact">
+        <a className="about-me-contact-font" href="/contact">
+          Contact me
+        </a>
+      </div>
     </div>
   );
 }

@@ -1,64 +1,53 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const Container = styled.div`
-  display: flex;
-  flex: wrap:
-  width: 100vw;
-  width: 95vw;
-  height: 100vh;
-  margin: 15px;
+// const Container = styled.div`
+//   display: flex;
+//   margin: 15px;
+//   border: 5px solid black;
 
-  .name-style {
-    justify-content: center;
-    margin-left: 35vw;
-    margin-right: ;
-    color: #F2CC8F;
-  }
+//   .about-style {
+//     justify-content: space-around;
+//   }
 
-  .about-style {
-    flex: wrap;
-    justify-content: space-around;
-    width: 90%
-  }
+//   .about-font-style {
+//     color: #81b29a;
+//   }
 
-  .about-font-style {
-    color: #81B29A;
-  }
+//   .photo {
+//     width: 50%;
+//     height: auto;
+//   }
 
-  .photo {
-    flex: wrap;
-    width: 100%;
-    height: 100%;
-  }
-
-`;
+//   .name-style {
+//     justify-content: center;
+//     color: #f2cc8f;
+//   }
+//   .infoContainer {
+//     flex: wrap;
+//     border: 5px solid black;
+//     width: 100vw;
+//   }
+// `;
 
 export default function AboutMeDetail({ aboutMe }) {
   return (
-    <Container>
-      <div>
-        <div className="name-style">
-          <h1>{aboutMe.name}</h1>
-        </div>
+    <article className="about-me-detail-container">
+      <img
+        className="photo"
+        src={aboutMe.photoUrl}
+        title={aboutMe.photoTitle}
+        alt={aboutMe.name}
+      />
+      <div className="infoContainer">
         <div>
           <div className="about-style">
             <p className="about-font-style">{aboutMe.about}</p>
           </div>
         </div>
-        <div>
-          <a href={aboutMe.photoHref}>
-            <img
-              className="photo"
-              src={aboutMe.photoUrl}
-              title={aboutMe.photoTitle}
-              alt={aboutMe.name}
-            />
-          </a>
-        </div>
       </div>
-    </Container>
+    </article>
   );
 }
 
