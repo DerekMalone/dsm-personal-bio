@@ -1,26 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import { getProject, deleteSingleRepo } from '../helpers/projectsData';
-
-const ProjectDiv = styled.div`
-  justify-content: space-around;
-  align-content: space-around;
-  border: solid 2px #e07a5f;
-  border-radius: 10px;
-  width: 95vw;
-  margin: 15px;
-  background-color: #81b29a;
-
-  .name-style {
-    color: #f2cc8f;
-  }
-
-  .projects-style {
-    color: #3d405b;
-  }
-`;
 
 export default function ProjectDetails({ repo, user }) {
   const [projects, setProjects] = useState({});
@@ -39,7 +20,7 @@ export default function ProjectDetails({ repo, user }) {
   return (
     <>
       {user ? (
-        <ProjectDiv>
+        <article className="project-detail">
           <h2 className="name-style">{repo.repoName}</h2>
           <h3 className="projects-style">{projects[7]}</h3>
 
@@ -62,13 +43,13 @@ export default function ProjectDetails({ repo, user }) {
               Delete
             </button>
           </div>
-        </ProjectDiv>
+        </article>
       ) : (
-        <ProjectDiv>
+        <article className="project-detail">
           <h2 className="name-style">{repo.repoName}</h2>
           <h3 className="projects-style">{projects[7]}</h3>
           <a href={projects[6]}>Go to Project</a>
-        </ProjectDiv>
+        </article>
       )}
     </>
   );

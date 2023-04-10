@@ -24,6 +24,11 @@ export default function AboutMe() {
       <div>
         <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
       </div>
+      <div className="about-me-contact">
+        <a className="about-me-contact-font" href="/contact">
+          Contact me
+        </a>
+      </div>
     </div>
   );
 }

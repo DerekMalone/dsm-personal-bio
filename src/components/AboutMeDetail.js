@@ -1,39 +1,39 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const Container = styled.div`
-  display: flex;
-  margin: 15px;
-  border: 5px solid black;
+// const Container = styled.div`
+//   display: flex;
+//   margin: 15px;
+//   border: 5px solid black;
 
-  .about-style {
-    justify-content: space-around;
-  }
+//   .about-style {
+//     justify-content: space-around;
+//   }
 
-  .about-font-style {
-    color: #81b29a;
-  }
+//   .about-font-style {
+//     color: #81b29a;
+//   }
 
-  .photo {
-    width: 50%;
-    height: auto;
-  }
+//   .photo {
+//     width: 50%;
+//     height: auto;
+//   }
 
-  .name-style {
-    justify-content: center;
-    color: #f2cc8f;
-  }
-  .infoContainer {
-    flex: wrap;
-    border: 5px solid black;
-    width: 100vw;
-  }
-`;
+//   .name-style {
+//     justify-content: center;
+//     color: #f2cc8f;
+//   }
+//   .infoContainer {
+//     flex: wrap;
+//     border: 5px solid black;
+//     width: 100vw;
+//   }
+// `;
 
 export default function AboutMeDetail({ aboutMe }) {
   return (
-    <Container>
+    <article className="about-me-detail-container">
       <img
         className="photo"
         src={aboutMe.photoUrl}
@@ -41,16 +41,13 @@ export default function AboutMeDetail({ aboutMe }) {
         alt={aboutMe.name}
       />
       <div className="infoContainer">
-        <div className="name-style">
-          <h1>{aboutMe.name}</h1>
-        </div>
         <div>
           <div className="about-style">
             <p className="about-font-style">{aboutMe.about}</p>
           </div>
         </div>
       </div>
-    </Container>
+    </article>
   );
 }
 
