@@ -91,6 +91,57 @@ height: 68px;
 background: #650E1D;
 }
 
+.contact-card {
+  justify-content: center;
+  margin: 5rem;
+  border: solid 2px $borderColor;
+  border-radius: 10px;
+  background-color: $aboutMeBlockColor;
+  // width: 75vw;
+  flex: wrap;
+  justify-content: space-between;
+}
+
+  // .contents-style {
+  //   flex: wrap;
+  //   justify-content: space-between;
+  // }
+
+    .contact-style {
+    justify-content: center;
+    margin: 1rem;
+    width: 100%;
+    color: $primaryFontColor;
+  }
+
+    .email-style {
+    justify-content: center;
+    margin: 1rem;
+    flex: wrap;
+    width: 100%;
+  }
+
+  .phone-style {
+    justify-content: center;
+    margin: 1rem;
+    flex: wrap;
+    width: 100%;
+  }
+
+  .gitHub-style {
+    justify-content: center;
+    margin: 5px;
+    flex: wrap;
+    width: 100%;
+  }
+
+  .linked-style {
+    justify-content: center;
+    margin: 5px;
+    flex: wrap;
+    width: 100%;
+  }
+
 .project-detail {
   justify-content: space-around;
   align-content: space-around;
