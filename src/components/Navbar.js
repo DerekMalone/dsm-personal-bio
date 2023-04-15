@@ -56,8 +56,8 @@ const BioNavbar = ({ user }) => {
             {user ? (
               <>
                 <NavItem>
-                  <NavLink className="nav-span" href="/projects">
-                    Projects
+                  <NavLink className="nav-span" href="/contact">
+                    Contact Info
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -66,10 +66,11 @@ const BioNavbar = ({ user }) => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-span" href="/contact">
-                    Contact
+                  <NavLink className="nav-span" href="/projects">
+                    Projects
                   </NavLink>
                 </NavItem>
+
                 <NavItem>
                   <NavLink className="nav-span" href="/admin">
                     Admin

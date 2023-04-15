@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Initialize Firebase
+// // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(

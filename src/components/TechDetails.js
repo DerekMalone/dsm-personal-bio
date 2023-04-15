@@ -1,36 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Techdiv = styled.div`
-  display: flex;
-`;
+// const TechLogos = styled.div`
+//   flex: wrap;
+//   justify-content: space-around;
+//   background-color: #f4f1de;
+//   border: solid 0.25rem #81b29a;
+//   border-radius: 10px;
 
-const TechLogos = styled.div`
-  flex: wrap;
-  justify-content: space-around;
-  background-color: #f4f1de;
-  border: solid 0.25rem #81b29a;
-  border-radius: 10px;
-
-  .react-logo,
-  .javascript-logo,
-  .sass-logo,
-  .html5-logo,
-  .github-logo,
-  .bootstrap-logo,
-  .postman-student-expert,
-  .firebase-logo {
-    margin: 1rem;
-    height: 6.5rem;
-    width: 6.5rem;
-  }
-`;
+//   .react-logo,
+//   .javascript-logo,
+//   .sass-logo,
+//   .html5-logo,
+//   .github-logo,
+//   .bootstrap-logo,
+//   .postman-student-expert,
+//   .firebase-logo {
+//     margin: 1rem;
+//     height: 6.5rem;
+//     width: 6.5rem;
+//   }
+// `;
 
 export default function TechDetails() {
   return (
     <>
-      <Techdiv>
-        <TechLogos>
+      <section className="tech-section">
+        <div className="tech-logos">
           <img className="react-logo" src="/logo512.png" alt="React.js logo" />
           <img
             className="javascript-logo"
@@ -67,8 +62,8 @@ export default function TechDetails() {
             src="/images/firebase-logo-vertical.png"
             alt="firebase logo"
           />
-        </TechLogos>
-      </Techdiv>
+        </div>
+      </section>
     </>
   );
 }
