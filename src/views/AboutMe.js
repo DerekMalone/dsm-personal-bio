@@ -18,12 +18,8 @@ export default function AboutMe() {
 
   return (
     <div className="main-content">
-      <div>
-        <BannerImage />
-      </div>
-      <div>
-        <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
-      </div>
+      <BannerImage />
+      <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
       <div className="about-me-contact">
         <a className="about-me-contact-font" href="/contact">
           Contact me

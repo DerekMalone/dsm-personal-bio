@@ -1,5 +1,5 @@
 import React from 'react';
-import { cloudinaryConfig } from '../api/apiKeys';
+import cloudinaryConfig from '../api/apiKeys';
 
 const CloudinaryUploadWidget = () => {
   // componentDidMount();

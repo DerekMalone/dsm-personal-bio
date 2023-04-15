@@ -35,7 +35,7 @@ box-sizing: border-box;
 height: 339px;
 
 // background: url(B1Zoo6c.jpg);
-border: 3px solid #650E1D;
+// border: 3px solid #650E1D;
 box-sizing: border-box;
 // transform: matrix(-1, 0, 0, 1, 0, 0);
 }
@@ -43,7 +43,8 @@ box-sizing: border-box;
 .about-me-detail-container {
   display: flex;
   margin: 15px;
-  border: 5px solid black;
+  border: 3px solid $borderColor;
+  border-radius: 10px;
 }
   .about-style {
     justify-content: space-around;
@@ -60,9 +61,10 @@ box-sizing: border-box;
 
   .infoContainer {
     flex: wrap;
-    border: 5px solid black;
     width: 100vw;
     background-color: $aboutMeBlockColor;
+    border-left: 3px solid $borderColor;
+    
   }
 
 .about-me-pannel {
@@ -91,13 +93,64 @@ height: 68px;
 background: #650E1D;
 }
 
+.contact-card {
+  justify-content: center;
+  margin: 5rem;
+  border: solid 3px $borderColor;
+  border-radius: 10px;
+  background-color: $aboutMeBlockColor;
+  // width: 75vw;
+  flex: wrap;
+  justify-content: space-between;
+}
+
+  // .contents-style {
+  //   flex: wrap;
+  //   justify-content: space-between;
+  // }
+
+    .contact-style {
+    justify-content: center;
+    margin: 1rem;
+    width: 100%;
+    color: $primaryFontColor;
+  }
+
+    .email-style {
+    justify-content: center;
+    margin: 1rem;
+    flex: wrap;
+    width: 100%;
+  }
+
+  .phone-style {
+    justify-content: center;
+    margin: 1rem;
+    flex: wrap;
+    width: 100%;
+  }
+
+  .gitHub-style {
+    justify-content: center;
+    margin: 5px;
+    flex: wrap;
+    width: 100%;
+  }
+
+  .linked-style {
+    justify-content: center;
+    margin: 5px;
+    flex: wrap;
+    width: 100%;
+  }
+
 .project-detail {
-  justify-content: space-around;
+  justify-content: center;
+  margin: 2rem 5rem;
   align-content: space-around;
-  border: solid 2px $borderColor;
+  border: solid 3px $borderColor;
   border-radius: 10px;
   width: 95vw;
-  margin: 15px;
   background-color: $aboutMeBlockColor;
 }
   .name-style {
@@ -135,6 +188,39 @@ background: #650E1D;
   background-color: $backColor;
 }
 
+.title-style {
+  text-align: center;
+  margin: 2rem;
+}
+
+.tech-section {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+
+}
+
+.tech-logos{
+  flex: wrap;
+  justify-content: space-around;
+  background-color: $techBackColor;
+  border: solid 0.25rem $borderColor;
+  border-radius: 10px;
+
+  .react-logo,
+  .javascript-logo,
+  .sass-logo,
+  .html5-logo,
+  .github-logo,
+  .bootstrap-logo,
+  .postman-student-expert,
+  .firebase-logo {
+    margin: 1rem;
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+}
+
 .footer-container {
   // justify-content: center;
   flex: 0;
@@ -167,7 +253,7 @@ width: 145px;
 height: 17px;
 
 background: #EDF2F1;
-border: 2px solid #650E1D;
+border: 3px solid #650E1D;
 box-sizing: border-box;
 
 
@@ -198,7 +284,7 @@ color: #650E1D;
 
 .image-container {
   border: 3px solid $accentColor;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 15px;
 }
 

@@ -2,24 +2,25 @@
 import React, { useState, useEffect } from 'react';
 import 'firebase/auth';
 import firebase from 'firebase/app';
+// import { useNavigate } from 'react-router-dom';
 import BioNavbar from '../components/Navbar';
 import Routes from '../routes/Routes';
 import Footer from '../views/Footer';
-import { firebaseConfig } from '../api/apiKeys';
 
 function Initialize() {
   const [user, setUser] = useState(null);
+  // const navigate = useNavigate();
   // const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
     // Would like to attempt to use Service Accounts -> Firebase Admin SDK if possible (https://github.com/nss-evening-cohort-16/evening-client-side/discussions/120)
     firebase.auth().onAuthStateChanged((authed) => {
-      if (authed) {
+      if (authed && authed.uid === process.env.REACT_APP_ADMIN_UID) {
         const userObj = {
           uid: authed.uid,
           fullName: authed.displayName,
           user: authed.email.split('@')[0],
-          isAdmin: authed.uid === firebaseConfig.adminUID,
+          isAdmin: true,
         };
         setUser(userObj);
         // if (authed && userObj.uid === firebaseConfig.adminUID) {
