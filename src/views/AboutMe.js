@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AboutMeDetail from '../components/AboutMeDetail';
 import getAboutMe from '../helpers/aboutMeData';
 import BannerImage from '../components/BannerImage';
+import QuickContact from '../components/QuickDetails';
 
 export default function AboutMe() {
   const [aboutMe, setAboutMe] = useState({});
@@ -22,8 +23,9 @@ export default function AboutMe() {
       <AboutMeDetail key={aboutMe.id} aboutMe={aboutMe} />
       <div className="about-me-contact">
         <a className="about-me-contact-font" href="/contact">
-          Contact me
+          Quick Links
         </a>
+        <QuickContact />
       </div>
     </div>
   );

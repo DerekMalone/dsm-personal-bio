@@ -54,6 +54,12 @@ const getSingleRepo = (fbKey) =>
       .catch(reject);
   });
 
+const updateRepo = async (repoItem) => {
+  const repo = axios.put(`${dbUrl}/projects/${repoItem.fbKey}.json`, repoItem);
+  const repoData = Object.values(repo.data);
+  return repoData;
+};
+
 const deleteSingleRepo = (fbKey) =>
   new Promise((resolve, reject) => {
     axios
@@ -62,4 +68,11 @@ const deleteSingleRepo = (fbKey) =>
       .catch(reject);
   });
 
-export { getProject, getRepoList, createRepo, getSingleRepo, deleteSingleRepo };
+export {
+  getProject,
+  getRepoList,
+  createRepo,
+  updateRepo,
+  getSingleRepo,
+  deleteSingleRepo,
+};

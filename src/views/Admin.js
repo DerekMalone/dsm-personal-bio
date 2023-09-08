@@ -47,10 +47,9 @@ const Admin = ({ user }) => {
 };
 
 Admin.propTypes = {
-  user: PropTypes.objectOf({
-    fullName: PropTypes.string,
-    photo: PropTypes.string,
-  }).isRequired,
+  user: PropTypes.shape(PropTypes.obj),
 };
+
+Admin.defaultProps = { user: null };
 
 export default Admin;

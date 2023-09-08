@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { createRepo, getSingleRepo } from '../helpers/projectsData';
+import { createRepo, getSingleRepo, updateRepo } from '../helpers/projectsData';
 
 const initialState = {
   firebaseKey: '',
@@ -45,10 +45,12 @@ const ProjectsForm = () => {
     e.preventDefault();
     if (fbKey) {
       console.warn('user active');
-      //   updateItem(formInput).then(() => {
-      resetForm();
-      history.push('/');
-      //   });
+
+      // TODO: Need to verify that the updateRepo promise does what is intended.
+      updateRepo(formInput).then(() => {
+        resetForm();
+        history.push('/');
+      });
     } else {
       console.warn('no user');
       createRepo({ ...formInput }).then(() => {
